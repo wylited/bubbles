@@ -1,0 +1,12 @@
+[submodule "deps/zig-wlroots"]
+	path = deps/zig-wlroots
+	url = https://github.com/swaywm/zig-wlroots
+[submodule "deps/zig-wayland"]
+	path = deps/zig-wayland
+	url = https://github.com/ifreund/zig-wayland
+[submodule "deps/zig-xbcommon"]
+	path = deps/zig-xbcommon
+	url = https://github.com/ifreund/zig-xkbcommon
+[submodule "deps/zig-pixman"]
+	path = deps/zig-pixman
+	url = https://github.com/ifreund/zig-pixman
