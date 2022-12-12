@@ -4,8 +4,8 @@
 [submodule "deps/zig-wayland"]
 	path = deps/zig-wayland
 	url = https://github.com/ifreund/zig-wayland
-[submodule "deps/zig-xbcommon"]
-	path = deps/zig-xbcommon
+[submodule "deps/zig-xkbcommon"]
+	path = deps/zig-xkbcommon
 	url = https://github.com/ifreund/zig-xkbcommon
 [submodule "deps/zig-pixman"]
 	path = deps/zig-pixman
