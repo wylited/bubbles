@@ -39,28 +39,28 @@ pub fn build(b: *Builder) void {
     scanner.generate("wl_data_device_manager", 3);
     scanner.generate("xdg_wm_base", 2);
 
-    const exe = b.addExecutable("bubbles", "src/bubbles.zig");
-    exe.setTarget(target);
-    exe.setBuildMode(mode);
+    const bubbles = b.addExecutable("bubbles", "src/bubbles.zig");
+    bubbles.setTarget(target);
+    bubbles.setBuildMode(mode);
 
-    exe.linkLibC();
+    bubbles.linkLibC();
 
-    exe.addPackage(wayland);
-    exe.linkSystemLibrary("wayland-server");
-    exe.step.dependOn(&scanner.step);
+    bubbles.addPackage(wayland);
+    bubbles.linkSystemLibrary("wayland-server");
+    bubbles.step.dependOn(&scanner.step);
     // TODO: remove when https://github.com/ziglang/zig/issues/131 is implemented
-    scanner.addCSource(exe);
+    scanner.addCSource(bubbles);
 
-    exe.addPackage(xkbcommon);
-    exe.linkSystemLibrary("xkbcommon");
+    bubbles.addPackage(xkbcommon);
+    bubbles.linkSystemLibrary("xkbcommon");
 
-    exe.addPackage(wlroots);
-    exe.linkSystemLibrary("wlroots");
-    exe.linkSystemLibrary("pixman-1");
+    bubbles.addPackage(wlroots);
+    bubbles.linkSystemLibrary("wlroots");
+    bubbles.linkSystemLibrary("pixman-1");
 
-    exe.install();
+    bubbles.install();
 
-    const run_cmd = exe.run();
+    const run_cmd = bubbles.run();
     run_cmd.step.dependOn(b.getInstallStep());
     if (b.args) |args| {
         run_cmd.addArgs(args);
