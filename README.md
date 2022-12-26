@@ -15,10 +15,24 @@ Then simply run `zig build` to build bubbles.zig.
 
 ### dependency requirement
 
-you may need the following dependencies to build bubbles: (currently I only test for arch linux)
+you will need the following dependencies (and possibly others) to build bubbles:
 - zig, (`pacman -S zig `)
 - wlroots, (`pacman -S wlroots`)
 
+
+## Goals
+
+What makes bubbles different from literally every other wayland compositor?
+
+Here are some features I aim to implement:
+- [ ] Leader based mneumonic key bindings (similar to doom emacs evil bindings)
+- [ ] Highly configurable and intuitive window tiling
+- [ ] Easily customizable window decorations
+- [ ] Low power draw on idle 
+- [ ] Scratchpads or scratch workspaces
+- [ ] Support freeBSD
+- [ ] Inbuilt redshift
+- [ ] Easy remote desktoping?
 
 ## License
 
