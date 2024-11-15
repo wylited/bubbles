@@ -4,7 +4,7 @@ const Scanner = @import("deps/zig-wayland/build.zig").Scanner;
 
 pub fn build(b: *Builder) void {
     const target = b.standardTargetOptions(.{});
-    // const optimize = b.standardOptimizeOption(.{});
+    const optimize = b.standardOptimizeOption(.{});
 
     const scanner = Scanner.create(b, .{});
 
@@ -23,7 +23,7 @@ pub fn build(b: *Builder) void {
         .name = "bubbles",
         .root_source_file = .{ .path = "src/bubbles.zig" },
         .target = target,
-        // .optimize = optimize,
+        .optimize = optimize,
     });
 
     exe.addModule("wayland", wayland);
